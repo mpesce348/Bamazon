@@ -19,16 +19,34 @@ connection.connect(function(err) {
 function start() {
 	inquirer.prompt ({
 		name: "userType",
-		type: "rawlist"
-		message: "Are you here to SHOP? or to WORK?"
-		choices: ["SHOP", "WORK"]
-	}).then(function(anwser){
+		type: "input",
+		message: "Are you here to SHOP or to WORK?"
+		}).then(function(anwser){
 	// based on their answer, either call the shop or the work functions
-      if (answer.userType.toUpperCase() === "SHOP") {
+      if (anwser.userType.toUpperCase() === "SHOP") {
         shopperStart();
-      }
-      else {
+      } else if (anwser.userType.toUpperCase() === "WORK") {
         managerStart();
+      } else {
+      	console.log('Please Try Again');
       }
 	})
 }
+
+function shopperStart() {
+	console.log('________________________________________');
+	console.log('');
+	console.log('******* WELCOME TO BAMAZON.COM! ********');
+	console.log('Almost All Your Shopping Needs Met Here!');
+	console.log('           (More or Less)               ');
+	console.log('________________________________________');
+};
+
+function managerStart() {
+	console.log('________________________________________');
+	console.log('');
+	console.log('Welcome Back to Bamazon.com, Human Slave');
+	console.log('           Now Get to Work              ');
+	console.log('            (We Own You)                ');
+	console.log('________________________________________');
+};
