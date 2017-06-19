@@ -40,6 +40,13 @@ function shopperStart() {
 	console.log('Almost All Your Shopping Needs Met Here!');
 	console.log('           (More or Less)               ');
 	console.log('________________________________________');
+
+	connection.query('SELECT * FROM products', function(err, results) {
+		for (var i = 0; i < results.length; i++) {
+			console.log(results[i].item_id + ' | ' + results[i].product_name + ' | ' + results[i].department_name + ' | $:' + results[i].price + ' | ' + results[i].stock_quantity);
+		}
+		console.log('____________________________________________');
+	})
 };
 
 function managerStart() {
