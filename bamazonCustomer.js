@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
     // Your username
     user: 'root',
     // Your password
-    password: 'Beernuts12',
+    password: '',
     database: 'BamazonDB'
 });
 //query function to conect with MySQL database
