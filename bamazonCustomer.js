@@ -57,12 +57,7 @@ function shopperStart() {
                 type: 'input',
                 message: 'How many would you like to buy?'
             }).then(function(userPurchase){
-            	//     connection.query('SELECT * FROM products WHERE item_id = ' + parseInt(idNumber), function(err, response){
-            	// 	if (err) throw err;
-            	// 	console.log(response);
-            	// })
-            	// console.log(idNumber);
-            	for (var i = 0; i < results.length; i++){
+               	for (var i = 0; i < results.length; i++){
             		if (results[i].item_id == parseInt(idNumber.userIDchoice)) {
             			console.log(results[i]);
             		}
